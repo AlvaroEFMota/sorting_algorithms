@@ -17,7 +17,7 @@ impl Sorter for InsertionSort {
 }
 
 #[test]
-fn bubble_sort_works() {
+fn insertion_sort_test() {
     let mut things_even = vec![4, 2, 3, 1, 8, 6, 7, 5];
     let mut things_odd = vec![4, 3, 2, 1, 5, 9, 7, 8, 6];
     //super::sort::<_,InsertionSort>(&mut things_even);
