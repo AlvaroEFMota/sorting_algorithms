@@ -1,8 +1,8 @@
 # sorting_algorithms
 Sorting algorithms implemented in Rust withou any `unsafe code blocks`.
 
-##Implemented
+## Implemented
 Quicksort, Insertionsort, Bubblesort, Selectionsort.
 
-##Future implementation
+## Future implementation
 Mergesort, Heapsort.
