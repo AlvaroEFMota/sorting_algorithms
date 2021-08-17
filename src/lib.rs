@@ -9,6 +9,13 @@ mod insertionsort;
 mod selectionsort;
 mod quicksort;
 
+// Allow any program using this librarry to have acess to the sorting algorithms
+pub use bubblesort::Bubblesort;
+pub use insertionsort::Insertionsort;
+pub use quicksort::Quicksort;
+pub use selectionsort::Selectionsort;
+
+
 #[cfg(test)]
 mod tests {
     use super::*; 

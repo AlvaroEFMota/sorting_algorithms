@@ -1,5 +1,3 @@
-// Olhar aqui: https://github.com/kyrias/ironsort/blob/master/src/lib.rs
-
 use super::Sorter;
 
 pub struct Quicksort;
