@@ -9,9 +9,10 @@ where T: Ord, S: Sorter {
     S::sort(slice)
 }
 
-mod bubble_sort;
-mod insertion_sort;
-mod selection_sort;
+mod bubblesort;
+mod insertionsort;
+mod selectionsort;
+mod quicksort;
 
 #[cfg(test)]
 mod tests {

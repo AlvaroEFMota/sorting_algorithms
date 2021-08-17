@@ -21,7 +21,7 @@ impl Sorter for SelectionSort {
 }
 
 #[test]
-fn selection_sort_test() {
+fn selectionsort_test() {
     let mut things_even = vec![4, 2, 3, 1, 8, 6, 7, 5];
     let mut things_odd = vec![4, 3, 2, 1, 5, 9, 7, 8, 6];
     SelectionSort::sort(&mut things_even);

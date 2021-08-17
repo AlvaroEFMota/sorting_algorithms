@@ -17,11 +17,9 @@ impl Sorter for InsertionSort {
 }
 
 #[test]
-fn insertion_sort_test() {
+fn insertionsort_test() {
     let mut things_even = vec![4, 2, 3, 1, 8, 6, 7, 5];
     let mut things_odd = vec![4, 3, 2, 1, 5, 9, 7, 8, 6];
-    //super::sort::<_,InsertionSort>(&mut things_even);
-    //super::sort::<_,InsertionSort>(&mut things_odd);
     InsertionSort::sort(&mut things_even);
     InsertionSort::sort(&mut things_odd);
     assert_eq!(things_even, &[1, 2, 3, 4, 5, 6, 7, 8]);
