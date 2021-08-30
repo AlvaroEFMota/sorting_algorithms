@@ -1,20 +1,14 @@
 pub trait Sorter {
     fn sort<T>(slice: &mut [T])
     where
-        T: Ord;
+        T: Ord + Clone + Copy;
 }
 
 mod bubblesort;
 mod insertionsort;
 mod selectionsort;
 mod quicksort;
-
-// Allow any program using this librarry to have acess to the sorting algorithms
-pub use bubblesort::Bubblesort;
-pub use insertionsort::Insertionsort;
-pub use quicksort::Quicksort;
-pub use selectionsort::Selectionsort;
-
+mod mergesort;
 
 #[cfg(test)]
 mod tests {
