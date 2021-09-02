@@ -2,15 +2,27 @@ use super::Sorter;
 
 struct Mergesort;
 
+impl Sorter for Mergesort {
+    fn sort<T>(slice: &mut [T])
+    where
+        T: Ord + Clone + Copy,
+    {
+        let size = slice.len();
+        merge_sort(slice, 0, size);
+    }
+}
+
 fn merge_sort<T>(v: &mut [T], start: usize, end: usize)
-    where T: Ord + Clone + Copy {
-    if end-start > 1 {
-        let middle = (start+end)/2;
+where
+    T: Ord + Clone + Copy,
+{
+    if end - start > 1 {
+        let middle = (start + end) / 2;
         merge_sort(v, start, middle);
         merge_sort(v, middle, end);
 
-        let mut aux_j: Vec<T> = Vec::with_capacity(middle-start);
-        let mut aux_k: Vec<T> = Vec::with_capacity(end-middle);
+        let mut aux_j: Vec<T> = Vec::with_capacity(middle - start);
+        let mut aux_k: Vec<T> = Vec::with_capacity(end - middle);
 
         for i in start..middle {
             aux_j.push(v[i].clone());
@@ -22,8 +34,9 @@ fn merge_sort<T>(v: &mut [T], start: usize, end: usize)
         let mut j = 0;
         let mut k = 0;
         let mut index_i: usize = 0;
-        for i in start..end { // Aprender a colocar condições no for
-            if j >= middle-start || k >= end-middle {
+        for i in start..end {
+            // Aprender a colocar condições no for
+            if j >= middle - start || k >= end - middle {
                 break;
             }
 
@@ -38,25 +51,15 @@ fn merge_sort<T>(v: &mut [T], start: usize, end: usize)
         }
         index_i += 1;
 
-        for p in j..(middle-start) {
+        for p in j..(middle - start) {
             v[index_i] = aux_j[p];
             index_i += 1;
         }
 
-        for p in k..(end-middle) {
+        for p in k..(end - middle) {
             v[index_i] = aux_k[p];
             index_i += 1;
         }
-    }
-}
-
-impl Sorter for Mergesort {
-    fn sort<T>(slice: &mut [T])
-    where
-        T: Ord + Clone + Copy,
-    {
-        let size = slice.len();
-        merge_sort(slice, 0, size);
     }
 }
 

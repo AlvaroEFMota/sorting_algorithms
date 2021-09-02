@@ -2,6 +2,13 @@ use super::Sorter;
 
 pub struct Quicksort;
 
+impl Sorter for Quicksort {
+    fn sort<T>(slice: &mut [T])
+    where T: Ord {
+        quicksort(slice);
+    }
+}
+
 fn quicksort<T: Ord>(slice: &mut [T]) {
     if slice.len() > 1 {
         let pivot: usize = 0;
@@ -18,12 +25,6 @@ fn quicksort<T: Ord>(slice: &mut [T]) {
     }
 }
 
-impl Sorter for Quicksort {
-    fn sort<T>(slice: &mut [T])
-    where T: Ord {
-        quicksort(slice);
-    }
-}
 
 #[test]
 fn quicksort_test() {
